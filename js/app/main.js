@@ -1,9 +1,12 @@
-define(['knockout', 'knockout.validation', 'jquery', 'app/inputForm', 'kvLocale/nb-NO'], function (ko, kv, $, InputForm) {
+define(['knockout', 'knockout.validation', 'jquery', 'moment', 'app/inputForm', 'kvLocale/nb-NO'], function (ko, kv, $, moment, InputForm) {
     'use strict';
 
     var viewModel = {};
 
-    viewModel.formData = {birthDate: ko.observable(new Date())};
+    viewModel.formData = {
+        birthDate: ko.observable(moment()),
+        dueDate: ko.observable(moment())
+    };
 
     viewModel.form = new InputForm(viewModel.formData);
 
@@ -14,7 +17,6 @@ define(['knockout', 'knockout.validation', 'jquery', 'app/inputForm', 'kvLocale/
             });
         }
     };
-
 
     kv.init({
         errorElementClass: 'has-warning',

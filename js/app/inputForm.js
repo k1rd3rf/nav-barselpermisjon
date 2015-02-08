@@ -1,11 +1,11 @@
-define(['knockout', 'app/maternityLeave', 'moment', 'text!view/inputForm.html'], function (ko, MaternityLeave, moment, view) {
+define(['knockout', 'app/maternityLeave', 'text!view/inputForm.html'], function (ko, MaternityLeave, view) {
     'use strict';
 
 
     var InputForm = function (options) {
         var form = this,
             defaults = {
-                birthDate: ko.observable(moment().format("dd/mm/yyyy")),
+                birthDate: ko.observable(),
                 dueDate: ko.observable()
             };
 
