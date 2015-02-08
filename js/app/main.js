@@ -1,4 +1,4 @@
-define(['knockout', 'knockout.validation', 'jquery', 'moment', 'app/inputForm', 'locale/nb-NO', 'kvLocale/nb-NO'], function (ko, kv, $, moment, InputForm, text) {
+define(['knockout', 'knockout.validation', 'jquery', 'moment', 'app/inputForm', 'app/maternitySummary', 'locale/nb-NO', 'kvLocale/nb-NO'], function (ko, kv, $, moment, InputForm, MaternitySummary, text) {
     'use strict';
 
     var viewModel = {};
@@ -9,7 +9,7 @@ define(['knockout', 'knockout.validation', 'jquery', 'moment', 'app/inputForm', 
     };
 
     viewModel.form = new InputForm(viewModel.formData);
-
+    viewModel.summary = new MaternitySummary();
     viewModel.text = text().main;
 
     ko.bindingHandlers.toJSON = {
