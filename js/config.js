@@ -20,3 +20,6 @@ requirejs.config({
         }
     }
 });
+
+
+requirejs(["app/main"]);
