@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <div data-bind="component: {name: 'maternity-leave-parent', params: maternityLeave.mother }"></div>
-    <div data-bind="component: {name: 'maternity-leave-parent', params: maternityLeave.father }"></div>
+    <div data-bind="component: {name: maternityLeave.mother.name, params: maternityLeave.mother }"></div>
+    <div data-bind="component: {name: maternityLeave.father.name, params: maternityLeave.father }"></div>
 
 </form>
