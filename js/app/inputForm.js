@@ -1,4 +1,4 @@
-define(['knockout', 'app/maternityLeave', 'text!view/inputForm.html'], function (ko, MaternityLeave, view) {
+define(['knockout', 'app/maternityLeave', 'text!view/inputForm.html', 'locale/nb-NO'], function (ko, MaternityLeave, view, text) {
     'use strict';
 
 
@@ -12,21 +12,23 @@ define(['knockout', 'app/maternityLeave', 'text!view/inputForm.html'], function 
 
             form.options = ko.utils.extend(defaults, options);
 
+            form.text = text().inputForm;
+
             form.permSelect = {
                 options: ko.observableArray([
                     {
                         weeks: 49,
                         salary: 100,
-                        description: "Kort"
+                        description: form.text.short
                     },
                     {
                         weeks: 59,
                         salary: 80,
-                        description: "Lang"
+                        description: form.text.long
                     }
                 ]),
                 render: function (item) {
-                    return item.description + " (" + item.weeks + " uker)";
+                    return item.description.replace("{0}", item.weeks);
                 },
                 selected: ko.observable()
             };
@@ -53,12 +55,12 @@ define(['knockout', 'app/maternityLeave', 'text!view/inputForm.html'], function 
 
             form.maternityLeave = {
                 mother: new MaternityLeave({
-                    title: "Mor",
+                    title: form.text.mother,
                     leaveWeeks: form.mothersAmount,
                     maxWeeks: form.maxWeeks
                 }),
                 father: new MaternityLeave({
-                    title: "Far",
+                    title: form.text.father,
                     leaveWeeks: form.fathersAmount,
                     maxWeeks: form.maxWeeks
                 })

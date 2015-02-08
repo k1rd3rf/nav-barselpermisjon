@@ -1,6 +1,6 @@
 <form class="form-horizontal">
     <div class="form-group">
-        <label class="col-sm-6 control-label">Permisjonslengde</label>
+        <label class="col-sm-6 control-label" data-bind="text: text.leaveLength"></label>
 
         <div class="col-sm-6">
             <select type="date" class="form-control"
@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="form-group" data-bind="validationElement: birthDate">
-        <label class="col-sm-6 control-label">Fødselsdato</label>
+        <label class="col-sm-6 control-label" data-bind="text: text.birthDate"></label>
 
         <div class="col-sm-6">
             <input type="date" class="form-control" data-bind="value: birthDate">
@@ -16,10 +16,10 @@
     </div>
 
     <div class="form-group" data-bind="validationElement: dueDate">
-        <label class="col-sm-6 control-label">Termindato</label>
+        <label class="col-sm-6 control-label" data-bind="text: text.dueDate"></label>
 
         <div class="col-sm-6">
-            <input type="date" class="form-control" data-bind="value: dueDate">
+            <input type="date" class="form-control" data-bind="value: text.dueDate">
         </div>
     </div>
 
