@@ -1,11 +1,12 @@
-define(['knockout', 'app/freeTime', 'moment', 'text!view/inputForm.html'], function (ko, FreeTime, moment, view) {
+define(['knockout', 'app/maternityLeave', 'moment', 'text!view/inputForm.html'], function (ko, MaternityLeave, moment, view) {
     'use strict';
 
 
     var InputForm = function (options) {
         var form = this,
             defaults = {
-                birthDate: ko.observable(moment().format("dd/mm/yyyy"))
+                birthDate: ko.observable(moment().format("dd/mm/yyyy")),
+                dueDate: ko.observable()
             };
 
         form.options = ko.utils.extend(defaults, options);
@@ -13,12 +14,12 @@ define(['knockout', 'app/freeTime', 'moment', 'text!view/inputForm.html'], funct
         form.permSelect = {
             options: ko.observableArray([
                 {
-                    weeks: 46,
+                    weeks: 49,
                     salary: 100,
                     description: "Kort"
                 },
                 {
-                    weeks: 56,
+                    weeks: 59,
                     salary: 80,
                     description: "Lang"
                 }
@@ -29,7 +30,7 @@ define(['knockout', 'app/freeTime', 'moment', 'text!view/inputForm.html'], funct
             selected: ko.observable()
         };
 
-        form.mothersAmount = ko.observable(37);
+        form.mothersAmount = ko.observable(39);
 
         form.fathersAmount = ko.computed(function () {
             return (form.permSelect.selected() || {}).weeks - form.mothersAmount();
@@ -44,15 +45,20 @@ define(['knockout', 'app/freeTime', 'moment', 'text!view/inputForm.html'], funct
             date: true
         });
 
-        form.freeTime = {
-            mother: new FreeTime({
+        form.dueDate = form.options.dueDate;
+        form.dueDate.extend({
+            date: true
+        });
+
+        form.maternityLeave = {
+            mother: new MaternityLeave({
                 title: "Mor",
-                permWeeks: form.mothersAmount,
+                leaveWeeks: form.mothersAmount,
                 maxWeeks: form.maxWeeks
             }),
-            father: new FreeTime({
+            father: new MaternityLeave({
                 title: "Far",
-                permWeeks: form.fathersAmount,
+                leaveWeeks: form.fathersAmount,
                 maxWeeks: form.maxWeeks
             })
         };
