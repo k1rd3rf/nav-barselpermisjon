@@ -9,7 +9,7 @@ define(['knockout', 'text!view/maternityLeave.html'], function (ko, view) {
                 leaveWithoutPay: ko.observable(),
                 leaveWeeks: ko.observable(10),
                 title: ko.observable(),
-                maxWeeks: ko.observable(36)
+                maxWeeks: ko.observable(39)
             };
 
         leave.options = ko.utils.extend(defaults, options);
