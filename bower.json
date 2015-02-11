@@ -26,11 +26,13 @@
   "dependencies": {
     "requirejs": "~2.1.0",
     "requirejs-text": "~2.0.0",
+    "requirejs-domready": "~2.0.0",
     "underscore": "~1.7.0",
     "moment": "~2.9.0",
     "bootstrap": "~3.3.0",
     "knockout": "~3.2.0",
     "knockout-validation": "~2.0.0",
-    "font-awesome": "~4.3.0"
+    "font-awesome": "~4.3.0",
+    "vis": "~3.10.0"
   }
 }
