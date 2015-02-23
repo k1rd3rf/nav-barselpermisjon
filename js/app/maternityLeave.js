@@ -1,4 +1,4 @@
-define(['knockout', 'text!view/maternityLeave.html', 'locale/nb-NO'], function (ko, view, text) {
+define(['knockout', 'text!view/maternityLeave.html', 'i18n!nls/maternityLeave'], function (ko, view, text) {
     'use strict';
 
 
@@ -12,9 +12,8 @@ define(['knockout', 'text!view/maternityLeave.html', 'locale/nb-NO'], function (
                     title: ko.observable(),
                     maxWeeks: ko.observable(39)
                 };
-
             leave.options = ko.utils.extend(defaults, options);
-            leave.text = text().maternityLeave;
+            leave.text = text;
 
             leave.vacationDays = leave.options.vacationDays;
             leave.leaveWeeks = leave.options.leaveWeeks;

@@ -1,4 +1,4 @@
-define(['knockout', 'app/maternityLeave', 'text!view/inputForm.html', 'locale/nb-NO'], function (ko, MaternityLeave, view, text) {
+define(['knockout', 'app/maternityLeave', 'text!view/inputForm.html', 'i18n!nls/inputForm'], function (ko, MaternityLeave, view, text) {
     'use strict';
 
 
@@ -11,8 +11,7 @@ define(['knockout', 'app/maternityLeave', 'text!view/inputForm.html', 'locale/nb
                 };
 
             form.options = ko.utils.extend(defaults, options);
-
-            form.text = text().inputForm;
+            form.text = text;
 
             form.permSelect = {
                 options: ko.observableArray([
