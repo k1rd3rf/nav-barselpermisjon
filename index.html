@@ -10,7 +10,7 @@
 
 </head>
 
-<body class="container">
+<body>
 
 <a href="https://github.com/k1rd3rf/nav-barselpermisjon">
     <img style="position: absolute; top: 0; right: 0; border: 0; z-index: 2"
@@ -18,11 +18,12 @@
          alt="Fork me on GitHub"
          data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
 
-<h1 data-bind="text: text.title"></h1>
+<div class="container">
+    <h1 data-bind="text: text.title"></h1>
 
-<div data-bind="component: { name: form.name, params: form }" class="col-sm-4"></div>
-<div data-bind="component: { name: summary.name, params: summary }" class="col-sm-8"></div>
-
+    <div data-bind="component: { name: form.name, params: form }" class="col-sm-4"></div>
+    <div data-bind="component: { name: summary.name, params: summary }" class="col-sm-8"></div>
+</div>
 <script data-main="js/config" src="bower_components/requirejs/require.js"></script>
 </body>
 
