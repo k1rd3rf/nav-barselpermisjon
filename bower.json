@@ -27,6 +27,7 @@
     "requirejs": "~2.1.0",
     "requirejs-text": "~2.0.0",
     "requirejs-domready": "~2.0.0",
+    "requirejs-i18n": "~2.0.0",
     "underscore": "~1.7.0",
     "moment": "~2.9.0",
     "bootstrap": "~3.3.0",
