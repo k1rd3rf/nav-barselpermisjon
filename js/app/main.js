@@ -1,4 +1,4 @@
-define(['knockout', 'knockout.validation', 'jquery', 'moment', 'app/inputForm', 'app/maternitySummary', 'i18n!nls/main', 'kvLocale/nb-NO'], function (ko, kv, $, moment, InputForm, MaternitySummary, text) {
+define(['knockout', 'knockout.validation', 'moment', 'app/inputForm', 'app/maternitySummary', 'i18n!nls/main', 'kvLocale/nb-NO'], function (ko, kv, moment, InputForm, MaternitySummary, text) {
     'use strict';
 
     var Main = function () {
