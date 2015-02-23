@@ -1,0 +1,3 @@
+define({
+    "nb-NO": true
+});
