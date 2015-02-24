@@ -27,7 +27,6 @@ define(['knockout', 'knockout.validation', 'moment', 'app/inputForm', 'app/mater
                 errorMessageClass: 'help-block'
             });
             kv.locale('nb-NO');
-            viewModel.summary.initialize();
         };
 
         return viewModel;
