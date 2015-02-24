@@ -31,7 +31,7 @@
     "underscore": "~1.7.0",
     "moment": "~2.9.0",
     "bootstrap": "~3.3.0",
-    "knockout": "~3.2.0",
+    "knockout": "~3.3.0",
     "knockout-validation": "~2.0.0",
     "font-awesome": "~4.3.0",
     "vis": "~3.10.0"
